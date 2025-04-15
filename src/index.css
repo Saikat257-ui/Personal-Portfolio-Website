@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section-transition {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-transition.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effects for cards */
+.hover-pop {
+  transition: all 0.3s ease;
+}
+
+.hover-pop:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Skill bar animation */
+@keyframes growBar {
+  from { width: 0; }
+  to { width: var(--final-width); }
+}
+
+.skill-bar {
+  animation: growBar 1.5s ease-out forwards;
+}
+
+/* Button hover effect */
+.button-pop {
+  transition: all 0.3s ease;
+}
+
+.button-pop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Rainbow glow effect */
+@keyframes rainbow-glow {
+  0% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
+  16.666% { box-shadow: 0 0 30px rgba(255, 165, 0, 0.5); }
+  33.333% { box-shadow: 0 0 30px rgba(255, 255, 0, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(0, 255, 0, 0.5); }
+  66.666% { box-shadow: 0 0 30px rgba(0, 0, 255, 0.5); }
+  83.333% { box-shadow: 0 0 30px rgba(238, 130, 238, 0.5); }
+  100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5); }
+}
+
+.rainbow-glow-hover {
+  transition: transform 0.3s ease;
+}
+
+.rainbow-glow-hover:hover {
+  animation: rainbow-glow 5s linear infinite;
+  transform: translateY(-4px);
+}
