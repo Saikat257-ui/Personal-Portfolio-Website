@@ -1,7 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useTheme } from '../contexts/useTheme';
 
 const Hero = () => {
+  const { darkMode } = useTheme();
   const roles = useMemo(() => ['Saikat Patra', 'a Full-stack developer', 'a UI designer'], []);
   const [currentRole, setCurrentRole] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,31 +39,36 @@ const Hero = () => {
   }, [currentRole, currentIndex, isDeleting, roles]);
 
   return (
-    <section id="home" className="pt-20 md:pt-32 pb-20 gradient-bg">
+    <section id="home" className={`pt-20 md:pt-32 pb-20 ${darkMode ? 'bg-gray-800' : 'gradient-bg'}`}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
               Hi, I'm {' '}
-              <span className="text-blue-600 min-h-[1.5em] inline-block">
+              <span className="text-blue-400 min-h-[1.5em] inline-block">
                 {currentRole}<span className="animate-pulse">|</span>
               </span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className={`text-xl mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               A passionate software developer specializing in web applications and deep learning.
               Currently pursuing B.Tech in Computer Science at Brainware University.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#contact"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center button-pop"
+                className={`${darkMode ? 'bg-blue-500 hover:bg-blue-600' : 'bg-blue-600 hover:bg-blue-700'} 
+                  text-white px-6 py-3 rounded-lg flex items-center button-pop transition-colors duration-300`}
               >
                 Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
               <a
                 href="#projects"
-                className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg button-pop hover:bg-blue-50"
+                className={`border-2 px-6 py-3 rounded-lg button-pop transition-colors duration-300
+                  ${darkMode 
+                    ? 'border-blue-400 text-blue-400 hover:bg-blue-900/50' 
+                    : 'border-blue-600 text-blue-600 hover:bg-blue-50'
+                  }`}
               >
                 View Projects
               </a>
@@ -71,7 +78,7 @@ const Hero = () => {
             <img
               src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&h=600"
               alt="Profile"
-              className="rounded-full w-64 h-64 object-cover shadow-2xl floating"
+              className={`rounded-full w-64 h-64 object-cover floating ${darkMode ? 'shadow-blue-500/20' : 'shadow-2xl'}`}
             />
           </div>
         </div>

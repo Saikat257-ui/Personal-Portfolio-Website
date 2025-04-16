@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { useTheme } from '../contexts/useTheme';
 
 const Contact = () => {
+  const { darkMode } = useTheme();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,36 +24,61 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
+        <h2 className={`text-3xl md:text-4xl font-bold text-center mb-12 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          Get in Touch
+        </h2>
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+              <h3 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Contact Information
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-blue-600 mr-3" />
-                  <a href="mailto:your.email@example.com" className="text-gray-600 hover:text-blue-600">
+                  <Mail className={`h-5 w-5 mr-3 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+                  <a 
+                    href="mailto:efficient.coder.865@gmail.com" 
+                    className={`transition-colors duration-300 ${
+                      darkMode 
+                        ? 'text-gray-300 hover:text-blue-400' 
+                        : 'text-gray-600 hover:text-blue-600'
+                    }`}
+                  >
                     efficient.coder.865@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-blue-600 mr-3" />
-                  <a href="tel:+1234567890" className="text-gray-600 hover:text-blue-600">
+                  <Phone className={`h-5 w-5 mr-3 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+                  <a 
+                    href="tel:+919836744380" 
+                    className={`transition-colors duration-300 ${
+                      darkMode 
+                        ? 'text-gray-300 hover:text-blue-400' 
+                        : 'text-gray-600 hover:text-blue-600'
+                    }`}
+                  >
                     (+91) 9836744380
                   </a>
                 </div>
                 <div className="flex items-center">
-                  <MapPin className="h-5 w-5 text-blue-600 mr-3" />
-                  <span className="text-gray-600">Howrah, West Bengal, India</span>
+                  <MapPin className={`h-5 w-5 mr-3 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+                  <span className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
+                    Howrah, West Bengal, India
+                  </span>
                 </div>
               </div>
             </div>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label 
+                htmlFor="name" 
+                className={`block text-sm font-medium mb-1 ${
+                  darkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}
+              >
                 Name
               </label>
               <input
@@ -60,12 +87,21 @@ const Contact = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className={`w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-400' 
+                    : 'border border-gray-300 text-gray-900'
+                }`}
                 required
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label 
+                htmlFor="email" 
+                className={`block text-sm font-medium mb-1 ${
+                  darkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}
+              >
                 Email
               </label>
               <input
@@ -74,12 +110,21 @@ const Contact = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className={`w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-400' 
+                    : 'border border-gray-300 text-gray-900'
+                }`}
                 required
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              <label 
+                htmlFor="message" 
+                className={`block text-sm font-medium mb-1 ${
+                  darkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}
+              >
                 Message
               </label>
               <textarea
@@ -88,13 +133,21 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className={`w-full px-4 py-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-300 ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-400' 
+                    : 'border border-gray-300 text-gray-900'
+                }`}
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg flex items-center hover:bg-blue-700 transition-colors"
+              className={`px-6 py-3 rounded-lg flex items-center transition-colors duration-300 ${
+                darkMode 
+                  ? 'bg-blue-500 hover:bg-blue-600 text-white' 
+                  : 'bg-blue-600 hover:bg-blue-700 text-white'
+              }`}
             >
               Send Message
               <Send className="ml-2 h-5 w-5" />

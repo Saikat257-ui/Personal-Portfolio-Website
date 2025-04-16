@@ -1,9 +1,11 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../contexts/useTheme';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { darkMode, toggleDarkMode } = useTheme();
 
   const navItems = useMemo(() => ['Home', 'About', 'Skills', 'Projects', 'Achievements', 'Contact'], []);
 
@@ -47,11 +49,11 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
+    <nav className={`fixed w-full z-50 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white shadow-md'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-gray-800">Saikat</span>
+            <span className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-800'}`}>Saikat</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -61,23 +63,47 @@ const NavBar = () => {
                 <button
                   key={item}
                   onClick={() => handleNavClick(item.toLowerCase())}
-                  className={`text-gray-600 hover:text-blue-600 transition-all duration-300 ${
-                    activeSection === item.toLowerCase() 
-                      ? 'text-blue-600 font-semibold relative after:content-[""] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300'
-                      : ''
+                  className={`transition-all duration-300 ${
+                    activeSection === item.toLowerCase()
+                      ? `${darkMode ? 'text-blue-400' : 'text-blue-600'} font-semibold relative after:content-[""] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300`
+                      : darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'
                   }`}
                 >
                   {item}
                 </button>
               ))}
+              
+              {/* Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? (
+                  <Sun className="w-5 h-5 text-yellow-500" />
+                ) : (
+                  <Moon className="w-5 h-5 text-gray-600" />
+                )}
+              </button>
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-4">
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+              aria-label="Toggle dark mode"
+            >
+              {darkMode ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-gray-600" />
+              )}
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-gray-900 focus:outline-none transition-colors duration-300"
+              className={`hover:text-gray-900 focus:outline-none transition-colors duration-300 ${darkMode ? 'text-white hover:text-gray-300' : 'text-gray-600'}`}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -92,10 +118,10 @@ const NavBar = () => {
                 <button
                   key={item}
                   onClick={() => handleNavClick(item.toLowerCase())}
-                  className={`block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-600 transition-all duration-300 ${
+                  className={`block w-full text-left px-3 py-2 transition-all duration-300 ${
                     activeSection === item.toLowerCase()
-                      ? 'text-blue-600 bg-blue-50 font-semibold'
-                      : ''
+                      ? `${darkMode ? 'text-blue-400 bg-gray-800' : 'text-blue-600 bg-blue-50'} font-semibold`
+                      : darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'
                   }`}
                 >
                   {item}

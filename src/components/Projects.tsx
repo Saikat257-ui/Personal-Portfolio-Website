@@ -1,7 +1,8 @@
-// import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
+import { useTheme } from '../contexts/useTheme';
 
 const Projects = () => {
+  const { darkMode } = useTheme();
   const projects = [
     {
       title: 'ManagePortfolio',
@@ -22,14 +23,18 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Featured Projects</h2>
+        <h2 className={`text-3xl md:text-4xl font-bold text-center mb-12 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          Featured Projects
+        </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-lg shadow-lg overflow-hidden rainbow-glow-hover"
+              className={`rounded-lg overflow-hidden rainbow-glow-hover ${
+                darkMode ? 'bg-gray-800 shadow-blue-500/5' : 'bg-white shadow-lg'
+              }`}
             >
               <img
                 src={project.image}
@@ -37,13 +42,23 @@ const Projects = () => {
                 className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 transition-colors duration-300 hover:text-blue-600">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className={`text-xl font-semibold mb-2 transition-colors duration-300 hover:text-blue-400 ${
+                  darkMode ? 'text-white' : 'text-gray-900'
+                }`}>
+                  {project.title}
+                </h3>
+                <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm"
+                      className={`px-3 py-1 rounded-full text-sm ${
+                        darkMode 
+                          ? 'bg-blue-900/30 text-blue-400' 
+                          : 'bg-blue-100 text-blue-600'
+                      }`}
                     >
                       {tech}
                     </span>
@@ -52,14 +67,18 @@ const Projects = () => {
                 <div className="flex space-x-4">
                   <a
                     href={project.github}
-                    className="flex items-center text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-110"
+                    className={`flex items-center transition-all duration-300 hover:scale-110 ${
+                      darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'
+                    }`}
                   >
                     <Github className="h-5 w-5 mr-2" />
                     Code
                   </a>
                   <a
                     href={project.live}
-                    className="flex items-center text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-110"
+                    className={`flex items-center transition-all duration-300 hover:scale-110 ${
+                      darkMode ? 'text-gray-300 hover:text-blue-400' : 'text-gray-600 hover:text-blue-600'
+                    }`}
                   >
                     <ExternalLink className="h-5 w-5 mr-2" />
                     Live Demo
