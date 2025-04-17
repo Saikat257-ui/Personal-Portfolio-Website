@@ -8,8 +8,9 @@ html {
 
 .section-transition {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+  will-change: opacity, transform;
 }
 
 .section-transition.visible {
@@ -87,6 +88,56 @@ html {
 .rainbow-glow-hover:hover {
   animation: rainbow-glow 5s linear infinite;
   transform: translateY(-4px);
+}
+
+/* Rainbow glow effect for hero image */
+@keyframes hero-rainbow-glow {
+  0% { 
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5),
+                0 0 60px rgba(255, 0, 0, 0.2),
+                inset 0 0 30px rgba(255, 0, 0, 0.3);
+  }
+  16.666% { 
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.5),
+                0 0 60px rgba(255, 165, 0, 0.2),
+                inset 0 0 30px rgba(255, 165, 0, 0.3);
+    
+  }
+  33.333% { 
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.5),
+                0 0 60px rgba(255, 255, 0, 0.2),
+                inset 0 0 30px rgba(255, 255, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5),
+                0 0 60px rgba(0, 255, 0, 0.2),
+                inset 0 0 30px rgba(0, 255, 0, 0.3);
+  }
+  66.666% { 
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.5),
+                0 0 60px rgba(0, 0, 255, 0.2),
+                inset 0 0 30px rgba(0, 0, 255, 0.3);
+  }
+  83.333% { 
+    box-shadow: 0 0 30px rgba(238, 130, 238, 0.5),
+                0 0 60px rgba(238, 130, 238, 0.2),
+                inset 0 0 30px rgba(238, 130, 238, 0.3);
+  }
+  100% { 
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5),
+                0 0 60px rgba(255, 0, 0, 0.2),
+                inset 0 0 30px rgba(255, 0, 0, 0.3);
+  }
+}
+
+.hero-rainbow-glow {
+  border: 3px solid transparent;
+  animation: hero-rainbow-glow 10s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.hero-rainbow-glow:hover {
+  transform: scale(1.02) translateY(-5px);
 }
 
 /* Modal animation */
