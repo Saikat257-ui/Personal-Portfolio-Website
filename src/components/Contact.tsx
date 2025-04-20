@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Download } from 'lucide-react';
 import { useTheme } from '../contexts/useTheme';
 
 const Contact = () => {
@@ -68,6 +68,18 @@ const Contact = () => {
                     Howrah, West Bengal, India
                   </span>
                 </div>
+                <a
+                  href="/Saikat_Patra(_Reseme____).pdf"
+                  download="resume.pdf"
+                  className={`inline-flex items-center px-6 py-3 rounded-lg transition-colors duration-300 ${
+                    darkMode 
+                      ? 'bg-blue-500 hover:bg-blue-600 text-white' 
+                      : 'bg-blue-600 hover:bg-blue-700 text-white'
+                  }`}
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download My Resume
+                </a>
               </div>
             </div>
           </div>

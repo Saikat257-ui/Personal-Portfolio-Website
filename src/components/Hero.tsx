@@ -76,7 +76,7 @@ const Hero = () => {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <img
-              src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&h=600"
+              src="src\images\20250331_132807.jpg"
               alt="Profile"
               className={`rounded-full w-64 h-64 object-cover hero-rainbow-glow ${darkMode ? 'shadow-blue-500/20' : 'shadow-2xl'}`}
             />
