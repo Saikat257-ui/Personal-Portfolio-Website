@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useTheme } from '../contexts/useTheme';
+import profileImage from '../images/20250331_132807.jpg';
 
 const Hero = () => {
   const { darkMode } = useTheme();
@@ -76,7 +77,7 @@ const Hero = () => {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <img
-              src="src\images\20250331_132807.jpg"
+              src={profileImage}
               alt="Profile"
               className={`rounded-full w-64 h-64 object-cover hero-rainbow-glow ${darkMode ? 'shadow-blue-500/20' : 'shadow-2xl'}`}
             />
