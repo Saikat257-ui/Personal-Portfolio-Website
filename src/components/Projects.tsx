@@ -9,7 +9,7 @@ const Projects = () => {
       description: 'A comprehensive stock portfolio tracker built with the MERN stack, featuring real-time market data integration and advanced analytics.',
       tech: ['MongoDB', 'Express.js', 'React', 'Tailwind css', 'Spring Boot'],
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80',
-      github: 'https://github.com/Saikatp440/TrackinInvestedStock',
+      github: 'https://github.com/Saikat257-ui/TrackinInvestedStock',
       live: '#'
     },
     {
@@ -17,7 +17,7 @@ const Projects = () => {
       description: 'An AI-powered system that automatically detects and suggests fixes for common programming bugs using machine learning techniques.',
       tech: ['Python', 'TensorFlow', 'Pytorch', 'Transformer'],
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=80',
-      github: 'https://github.com/Saikatp440/SmartDebugger',
+      github: 'https://github.com/Saikat257-ui/Bug-detection-Fixing',
       live: '#'
     },
     {
@@ -25,7 +25,14 @@ const Projects = () => {
       description: 'A web application that uses deep learning to analyze and shortlist resumes, providing feedback to job seekers on how to improve their chances of getting hired.',
       tech: ['Python', 'HTML', 'CSS', 'JavaScript', 'FastAPI'],
       image: 'https://plus.unsplash.com/premium_photo-1661288470388-c5006797bdff?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      github: 'https://github.com/Saikatp440/CVScanPro'
+      github: 'https://github.com/Saikat257-ui/CVScanPro'
+    },
+    {
+      title: 'PdfIntelligence',
+      description: 'A full-stack application that allows users to upload PDF documents and ask questions regarding the content of these documents. The backend will process these documentsand utilize natural language processing to provide answers to the questions posed by the users.',
+      tech: ['Python', 'HTML', 'CSS', 'JavaScript', 'Flask'],
+      image: 'https://plus.unsplash.com/premium_photo-1682689551593-cb1b5a8c978a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGRmJTIwaW50ZWxsaWdlbmNlfGVufDB8fDB8fHww',
+      github: 'https://github.com/Saikat257-ui/PdfIntelligence'
     }
   ];
 

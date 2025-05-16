@@ -52,7 +52,7 @@ function AppContent() {
       <footer className={`${darkMode ? 'bg-black text-gray-300' : 'bg-gray-900 text-white'} py-8`}>
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center space-x-6 mb-4">
-            <a href="https://github.com/Saikatp440" className="hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Saikat257-ui" className="hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
               <Github className="w-6 h-6" />
             </a>
             <a href="https://linkedin.com/in/yourusername" className="hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
