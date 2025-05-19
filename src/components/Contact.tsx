@@ -59,7 +59,7 @@ const Contact = () => {
                         : 'text-gray-600 hover:text-blue-600'
                     }`}
                   >
-                    (+91) 9836744380
+                    (+91) 9123869372
                   </a>
                 </div>
                 <div className="flex items-center">

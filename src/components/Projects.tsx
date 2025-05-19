@@ -7,7 +7,7 @@ const Projects = () => {
     {
       title: 'TrackinInvestedStock',
       description: 'A comprehensive stock portfolio tracker built with the MERN stack, featuring real-time market data integration and advanced analytics.',
-      tech: ['MongoDB', 'Express.js', 'React', 'Tailwind css', 'Spring Boot'],
+      tech: ['PostgreSQL', 'Express.js', 'React', 'Tailwind css', 'Spring Boot'],
       image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=80',
       github: 'https://github.com/Saikat257-ui/TrackinInvestedStock',
       live: '#'
@@ -23,7 +23,7 @@ const Projects = () => {
     {
       title: 'CVScanPro',
       description: 'A web application that uses deep learning to analyze and shortlist resumes, providing feedback to job seekers on how to improve their chances of getting hired.',
-      tech: ['Python', 'HTML', 'CSS', 'JavaScript', 'FastAPI'],
+      tech: ['Python', 'Streamlit'],
       image: 'https://plus.unsplash.com/premium_photo-1661288470388-c5006797bdff?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       github: 'https://github.com/Saikat257-ui/CVScanPro'
     },

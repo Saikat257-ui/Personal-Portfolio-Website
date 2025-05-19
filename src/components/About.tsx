@@ -38,7 +38,7 @@ const About = () => {
             <div className={`p-6 rounded-lg hover-pop ${darkMode ? 'bg-green-900/20' : 'bg-green-50'}`}>
               <Trophy className="h-8 w-8 text-green-400 mb-4" />
               <h3 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Competitions</h3>
-              <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>Hackathon Enthusiast</p>
+              <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>Hackathon & Competitive Coding Enthusiast</p>
             </div>
             <div className={`p-6 rounded-lg hover-pop ${darkMode ? 'bg-orange-900/20' : 'bg-orange-50'}`}>
               <Palette className="h-8 w-8 text-orange-400 mb-4" />

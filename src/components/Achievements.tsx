@@ -1,4 +1,4 @@
-import { Award, BookOpen, Code, Star, X } from 'lucide-react';
+import { Award, BookOpen, Code, Star, X, ScrollText, GraduationCap } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/useTheme';
 
@@ -40,6 +40,18 @@ const Achievements = () => {
       title: 'Penetration Testing & R-programming Workshop',
       description: 'Completed advanced security workshop',
       isWorkshop: true
+    },
+    {
+      icon: <ScrollText className={`h-6 w-6 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />,
+      title: 'Internship Certificates',
+      description: 'Completed a paid internship on web development at NeuroNexus Innovations pvt. ltd.',
+      link: 'https://drive.google.com/file/d/1c81tXBzadDbIX1MnhHXIrAhdeCFyPXWu/view?usp=sharing'
+    },
+    {
+      icon: <GraduationCap className={`h-6 w-6 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />,
+      title: 'Course Completion Certificates',
+      description: 'Completed a course on backend development by META at Coursera',
+      link: 'https://drive.google.com/file/d/1cXphBSL1R9u1MWO3KHTBzyN1_SNeLj7-/view?usp=sharing'
     }
   ];
 
