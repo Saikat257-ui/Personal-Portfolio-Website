@@ -45,10 +45,15 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Hi, I'm {' '}
-              <span className="text-blue-400 min-h-[1.5em] inline-block">
-                {currentRole}<span className="animate-pulse">|</span>
-              </span>
+              <div className="min-h-[120px] md:min-h-[144px] flex flex-col justify-center">
+                <div className="flex flex-wrap items-center">
+                  <span>Hi, I'm&nbsp;</span>
+                  <div className="relative inline-flex items-center">
+                    <span className="text-blue-400 whitespace-pre">{currentRole}</span>
+                    <span className="animate-pulse text-blue-400 absolute right-[-12px]">|</span>
+                  </div>
+                </div>
+              </div>
             </h1>
             <p className={`text-xl mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               A passionate software developer specializing in web applications and deep learning.

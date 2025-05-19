@@ -177,3 +177,15 @@ html {
   transform: scale(1.05);
   filter: drop-shadow(2px 2px 15px rgba(59, 130, 246, 0.3));
 }
+
+/* Typing animation container */
+.typing-container {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.typing-text {
+  white-space: nowrap;
+  overflow: hidden;
+}
