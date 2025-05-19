@@ -69,7 +69,7 @@ const Contact = () => {
                   </span>
                 </div>
                 <a
-                  href="/Saikat_Patra(_Reseme____).pdf"
+                  href="/Saikat Patra - Resume (Updated).pdf"
                   download="resume.pdf"
                   className={`inline-flex items-center px-6 py-3 rounded-lg transition-colors duration-300 ${
                     darkMode 
