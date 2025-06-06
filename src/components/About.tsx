@@ -13,7 +13,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <p className={`leading-relaxed mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              As a third-year B.Tech Computer Science student at Brainware University, I'm deeply passionate
+              As a final-year B.Tech Computer Science student at Brainware University, I'm deeply passionate
               about exploring the intersections of artificial intelligence, machine learning, and web development.
               My academic journey has been marked by a constant drive to learn and innovate, particularly in
               the realms of AI & ML.

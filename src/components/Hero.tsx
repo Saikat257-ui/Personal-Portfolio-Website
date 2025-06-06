@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useTheme } from '../contexts/useTheme';
-import profileImage from '../images/20250331_132807.jpg';
+import profileImage from '../images/photo.jpg';
 
 const Hero = () => {
   const { darkMode } = useTheme();

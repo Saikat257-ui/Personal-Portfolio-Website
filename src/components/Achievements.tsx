@@ -33,7 +33,8 @@ const Achievements = () => {
     {
       icon: <BookOpen className={`h-6 w-6 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />,
       title: 'INTEL Industrial Training',
-      description: 'Completed intensive training program'
+      description: 'Completed intensive training program',
+      link: 'https://drive.google.com/file/d/1ITE4ZXhxyOPts8sVxjTVt3x9CDZZlPBe/view?usp=sharing'
     },
     {
       icon: <Star className={`h-6 w-6 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />,
