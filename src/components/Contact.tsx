@@ -46,7 +46,7 @@ const Contact = () => {
                         : 'text-gray-600 hover:text-blue-600'
                     }`}
                   >
-                    saikatp571@gmail.com
+                    efficient.coder.865@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -59,7 +59,7 @@ const Contact = () => {
                         : 'text-gray-600 hover:text-blue-600'
                     }`}
                   >
-                    (+91) 9123869372
+                    (+91) 9836744380
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -69,7 +69,7 @@ const Contact = () => {
                   </span>
                 </div>
                 <a
-                  href="/Saikat_Patra_Resume_updated.pdf"
+                  href="/Saikat_Patra_Resume (newly_updated).pdf"
                   download="Saikat_Patra_Resume.pdf"
                   className={`inline-flex items-center px-6 py-3 rounded-lg transition-colors duration-300 ${
                     darkMode 
