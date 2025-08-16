@@ -52,14 +52,14 @@ const Contact = () => {
                 <div className="flex items-center">
                   <Phone className={`h-5 w-5 mr-3 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
                   <a 
-                    href="tel:+919836744380" 
+                    href="tel:+919123869372" 
                     className={`transition-colors duration-300 ${
                       darkMode 
                         ? 'text-gray-300 hover:text-blue-400' 
                         : 'text-gray-600 hover:text-blue-600'
                     }`}
                   >
-                    (+91) 9836744380
+                    (+91) 9123869372
                   </a>
                 </div>
                 <div className="flex items-center">
