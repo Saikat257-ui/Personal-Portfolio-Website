@@ -25,14 +25,16 @@ const Projects = () => {
       description: 'A web application that uses deep learning to analyze and shortlist resumes, providing feedback to job seekers on how to improve their chances of getting hired.',
       tech: ['Python', 'Streamlit'],
       image: 'https://plus.unsplash.com/premium_photo-1661288470388-c5006797bdff?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      github: 'https://github.com/Saikat257-ui/CVScanPro'
+      github: 'https://github.com/Saikat257-ui/CVScanPro',
+      live: 'https://cvscanpro.streamlit.app/'
     },
     {
       title: 'PdfIntelligence',
       description: 'A full-stack application that allows users to upload PDF documents and ask questions regarding the content of these documents. The backend will process these documentsand utilize natural language processing to provide answers to the questions posed by the users.',
       tech: ['Python', 'HTML', 'CSS', 'JavaScript', 'Flask'],
       image: 'https://plus.unsplash.com/premium_photo-1682689551593-cb1b5a8c978a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGRmJTIwaW50ZWxsaWdlbmNlfGVufDB8fDB8fHww',
-      github: 'https://github.com/Saikat257-ui/PdfIntelligence'
+      github: 'https://github.com/Saikat257-ui/PdfIntelligence',
+      live: "#"
     },
     {
       title: 'Gemini-Backend-Clone',
