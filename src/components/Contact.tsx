@@ -46,7 +46,7 @@ const Contact = () => {
                         : 'text-gray-600 hover:text-blue-600'
                     }`}
                   >
-                    efficient.coder.865@gmail.com
+                    saikatp571@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -69,7 +69,7 @@ const Contact = () => {
                   </span>
                 </div>
                 <a
-                  href="/Saikat-Patra-(updated-resume).pdf"
+                  href="/Saikat_Patra_(Resume).pdf"
                   download="Saikat_Patra_Resume.pdf"
                   className={`inline-flex items-center px-6 py-3 rounded-lg transition-colors duration-300 ${
                     darkMode 
