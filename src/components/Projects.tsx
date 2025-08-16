@@ -13,7 +13,7 @@ const Projects = () => {
       live: '#'
     },
     {
-      title: 'SmartDebugger',
+      title: 'Bug-Detection-Fixing',
       description: 'An AI-powered system that automatically detects and suggests fixes for common programming bugs using machine learning techniques.',
       tech: ['Python', 'TensorFlow', 'Pytorch', 'Transformer'],
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=80',
