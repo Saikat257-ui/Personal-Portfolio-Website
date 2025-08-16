@@ -9,18 +9,54 @@ const Contact = () => {
     email: '',
     message: ''
   });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log(formData);
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
+    type: null,
+    message: ''
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong');
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you! Your message has been sent successfully.'
+      });
+      setFormData({ name: '', email: '', message: '' }); // Reset form
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -153,17 +189,41 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className={`px-6 py-3 rounded-lg flex items-center transition-colors duration-300 ${
-                darkMode 
-                  ? 'bg-blue-500 hover:bg-blue-600 text-white' 
-                  : 'bg-blue-600 hover:bg-blue-700 text-white'
-              }`}
-            >
-              Send Message
-              <Send className="ml-2 h-5 w-5" />
-            </button>
+            <div className="space-y-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full px-6 py-3 rounded-lg flex items-center justify-center transition-colors duration-300 ${
+                  darkMode 
+                    ? 'bg-blue-500 hover:bg-blue-600 text-white disabled:bg-blue-400' 
+                    : 'bg-blue-600 hover:bg-blue-700 text-white disabled:bg-blue-400'
+                } disabled:cursor-not-allowed`}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="ml-2 h-5 w-5" />
+                  </>
+                )}
+              </button>
+
+              {submitStatus.type && (
+                <div 
+                  className={`p-4 rounded-lg ${
+                    submitStatus.type === 'success'
+                      ? darkMode ? 'bg-green-900/50 text-green-300' : 'bg-green-100 text-green-800'
+                      : darkMode ? 'bg-red-900/50 text-red-300' : 'bg-red-100 text-red-800'
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+            </div>
           </form>
         </div>
       </div>
