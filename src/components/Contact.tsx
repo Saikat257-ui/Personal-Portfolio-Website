@@ -105,8 +105,8 @@ const Contact = () => {
                   </span>
                 </div>
                 <a
-                  href="/Saikat_Patra_(Resume).pdf"
-                  download="Saikat_Patra_Resume.pdf"
+                  href="/Saikat-Patra-(updated resume).pdf"
+                  download="Saikat-Patra-(updated resume)"
                   className={`inline-flex items-center px-6 py-3 rounded-lg transition-colors duration-300 ${
                     darkMode 
                       ? 'bg-blue-500 hover:bg-blue-600 text-white' 
