@@ -82,7 +82,7 @@ const Contact = () => {
                         : 'text-gray-600 hover:text-blue-600'
                     }`}
                   >
-                    efficient.coder.865@gmail.com
+                    saikatp499@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center">
